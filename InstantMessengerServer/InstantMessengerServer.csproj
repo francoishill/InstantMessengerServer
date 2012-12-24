@@ -76,7 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SharedClasses\InstantMessengerShared.cs">
+    <Compile Include="..\..\SharedClasses\InstantMessengerShared.cs">
       <Link>InstantMessengerShared.cs</Link>
     </Compile>
     <Compile Include="Client.cs" />
