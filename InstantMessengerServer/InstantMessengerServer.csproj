@@ -66,18 +66,66 @@
     <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SharedClasses\AppTypeIndependant.cs">
+      <Link>AppTypeIndependant.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\AutoUpdating.cs">
+      <Link>AutoUpdating.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\DeveloperCommunication.cs">
+      <Link>DeveloperCommunication.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\fastJSON.cs">
+      <Link>fastJSON.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\FeedbackMessageTypes.cs">
+      <Link>FeedbackMessageTypes.cs</Link>
+    </Compile>
     <Compile Include="..\..\SharedClasses\InstantMessengerShared.cs">
       <Link>InstantMessengerShared.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\ProcessesInterop.cs">
+      <Link>ProcessesInterop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\ReflectionInterop.cs">
+      <Link>ReflectionInterop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\RegistryInterop.cs">
+      <Link>RegistryInterop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\ThreadingInterop.cs">
+      <Link>ThreadingInterop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\UnhandledExceptionsWindow.xaml.cs">
+      <Link>UnhandledExceptionsWindow.xaml.cs</Link>
+      <DependentUpon>UnhandledExceptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\UserMessages.cs">
+      <Link>UserMessages.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SharedClasses\UserMessages.Designer.cs">
+      <Link>UserMessages.Designer.cs</Link>
+      <DependentUpon>UserMessages.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Program.cs" />
@@ -94,6 +142,21 @@
     <None Include="tools\generate_cert.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\SharedClasses\UserMessages.resx">
+      <Link>UserMessages.resx</Link>
+      <DependentUpon>UserMessages.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\..\SharedClasses\UnhandledExceptionsWindow.xaml">
+      <Link>UnhandledExceptionsWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

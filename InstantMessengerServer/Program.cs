@@ -22,6 +22,8 @@ namespace InstantMessengerServer
     {
         static void Main(string[] args)
         {
+			SharedClasses.AutoUpdating.CheckForUpdates_ExceptionHandler();
+
             Program p = new Program();
             Console.WriteLine();
             Console.WriteLine("Press enter to close program.");
