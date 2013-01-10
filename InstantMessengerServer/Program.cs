@@ -20,14 +20,23 @@ namespace InstantMessengerServer
 {
     public class Program
     {
+		[STAThread]
         static void Main(string[] args)
         {
 			SharedClasses.AutoUpdating.CheckForUpdates_ExceptionHandler();
 
-            Program p = new Program();
-            Console.WriteLine();
-            Console.WriteLine("Press enter to close program.");
-            Console.ReadLine();
+			//try
+			//{
+				Program p = new Program();
+				Console.WriteLine();
+				Console.WriteLine("Press enter to close program.");
+				Console.ReadLine();
+			//}
+			//catch (Exception exc)
+			//{
+			//    Console.WriteLine("Error: " + exc.Message + Environment.NewLine + "Stacktrace: " + exc.StackTrace);
+			//    Console.ReadLine();
+			//}
         }
 
         // Self-signed certificate for SSL encryption.
